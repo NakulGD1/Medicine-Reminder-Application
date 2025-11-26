@@ -98,6 +98,8 @@ last_taken	TEXT	ISO date (YYYY-MM-DD)
 
 📸 UI Snapshots
 
+<img width="910" height="800" alt="ss1" src="https://github.com/user-attachments/assets/bd943e62-a664-42b3-b8c9-249e22ad36df" />
+<img width="764" height="852" alt="ss2" src="https://github.com/user-attachments/assets/46eee17c-718b-4d15-92ac-15a11418020c" />
 
 🧩 Future Enhancements
 
