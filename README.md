@@ -1,20 +1,120 @@
-# Medicine Reminder Application
-This is a simple Python script that helps you set up reminders to take your medicine at a specified time each day. The script uses the 'plyer' library to send desktop notifications and the datetime library to check the current time.
+## 💊 MedRem V2 — Smart Medication Reminder App
 
-**Installation**
+A simple yet powerful Streamlit-based medication tracking system with real-time desktop notifications, automatic refresh, and an easy database-backed UI for daily medication management.
 
-1. Install the required library using pip:
+## 🚀 Features
+- 🔔 Smart Notifications
+
+Sends real-time browser notifications when medication time matches the current time.
+
+Works even when the app is in the background (as long as browser permissions are enabled).
+
+- 📅 Daily Tracking
+
+Tracks medication status:
+
+⏰ Upcoming
+
+🔴 Missed
+
+✅ Taken
+
+Auto-updates every 60 seconds using streamlit_autorefresh.
+
+- 🧠 SQLite Database
+
+Stores all medication details in medication.db
+
+Saves:
+
+Name
+
+Dosage
+
+Time
+
+Meal timing
+
+Last taken date
+
+- 🛠 CRUD Operations
+
+➕ Add medication
+
+✏️ Modify medication
+
+❌ Remove medication
+
+👀 View all medication schedules with status indicators
+
+- 🖥 Streamlit UI
+
+Clean and interactive interface
+
+Forms for adding or editing entries
+
+Gradient-colored status boxes
+
+- 📂 Project Structure
+```bash
+MedRemV2/
+│── MedRemV2.py          # Main Streamlit App
+│── medication.db        # SQLite Database
+│── Notify.mp3           # (Optional) Notification sound, if you want to integrate
+│── README.md            # Project Documentation
 ```
-pip install plyer
+🛠 How It Works
+1️⃣ Start the App
+
+Run:
+```bash
+streamlit run MedRemV2.py
+```
+2️⃣ Allow Browser Notifications
+
+On first load, your browser will ask permission → click Allow.
+
+3️⃣ Add Your Medicines
+
+Use the sidebar menus to Add, Modify, Remove, or View All.
+
+4️⃣ Automatic Reminder
+
+Every minute, the system checks:
+
+If medicine.time == current_time AND last_taken != today
+      Trigger notification
+
+🗄 Database Schema
+```bash
+Column	Type	Description
+id	INTEGER	Primary key
+name	TEXT	Medication name
+dosage	TEXT	e.g., “2 tablets”
+time	TEXT	“HH:MM” format
+meal_time	TEXT	Before or After meal
+last_taken	TEXT	ISO date (YYYY-MM-DD)
 ```
 
-2. Save an icon file for the notification (e.g., MRlogo.ico) in a known location. Update the script with the correct path to this icon.
-```
-app_icon = "C:/path/to/your/MRlogo.ico",
-```
-**Usage**
-1. Run the script.
+📸 UI Snapshots
 
-2. When prompted, enter the hour and minute for the reminder.
 
-3. The script will continuously run and check the current time every minute. When the current time matches the specified time, a notification will be triggered, and the current day of the week will be displayed in the console.
+🧩 Future Enhancements
+
+Mobile-friendly PWA version
+
+Sound-based notifications
+
+Weekly schedule export
+
+Email/SMS reminders
+
+Multi-user support
+
+🤝 Contributing
+
+Open to pull requests. Feel free to improve UI, logic, or notification handling.
+
+📜 License
+
+MIT License. Free to use and modify.
